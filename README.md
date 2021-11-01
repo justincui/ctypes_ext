@@ -159,7 +159,7 @@ struct{
  'f': [123, 456]}
 -----------------------------------
 WARNING: when load_dict to ctypes object, <cobj@2760473570832>.invalid_field not exist and setting this field to 43981(0xabcd) is ignored.
-File "D:/gitrepo/ctypes_ext/_impl.py", line 376, in <module>
+File "./ctypes_ext/_impl.py", line 376, in <module>
     s2.load_dict(d1, invalid_field=0xabcd)
 struct{
  	a <c_ushort> = 0x1  
@@ -195,7 +195,7 @@ struct{
 }
 -----------------------------------
 WARNING: when load_dict to ctypes object, <cobj@2760473570452>.invalid_field not exist and setting this field to 74565(0x12345) is ignored.
-File "D:/gitrepo/ctypes_ext/_impl.py", line 381, in <module>
+File "./ctypes_ext/_impl.py", line 381, in <module>
     s3=S.load_dict(d1)
 struct{
  	a <c_ushort> = 0x1  
