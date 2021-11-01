@@ -12,23 +12,23 @@ import pprint
 # declare the C struct
 S = struct[
         ('a', c_uint16),
-        ('', c_uint16),
-        ('d', struct.anon[
+        ('', c_uint16),    # padding
+        ('d', struct.anon[     # anonymous struct
             ('d0', c_uint8, 1),
             ('d1', c_uint8, 2)
         ]),
-        ('e', 2 * struct[
+        ('e', 2 * struct[       # array of struct
             ('e0', c_uint8, 1),
             ('e1', c_uint8, 2)
         ]),
         ('f', 2 * c_uint32),
 
-        ('c', union.anon[
+        ('c', union.anon[   # anonymous union
             ('cv', c_uint8),
             ('', union.anon[
                 ('cs', struct[
                     ('c0', c_uint8, 4),
-                    cenum('c0',{0:'Zero', 1: 'One', 2: 'Two', 3: 'Three'}),
+                    cenum('c0',{0:'Zero', 1: 'One', 2: 'Two', 3: 'Three'}),  # annotate a field with enum
                     ('c1', c_uint8, 4)
                 ]),
                 ('cs1', struct[
