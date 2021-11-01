@@ -81,3 +81,182 @@ s.f[0]
 
 ```
 
+## expected output
+```text
+---------------test1--------------------
+struct{
+ 	a <c_ushort> = 0x1  
+ 	 <c_ushort> = 0x0  
+ 	d <struct.anon> = struct.anon{
+	 	d0 <c_ubyte:1> = 0x0  
+	 	d1 <c_ubyte:2> = 0x3  
+	}  
+ 	e <struct_Array_2> = [
+		0=> struct{
+		 	e0 <c_ubyte:1> = 0x0  
+		 	e1 <c_ubyte:2> = 0x0  
+		}
+		1=> struct{
+		 	e0 <c_ubyte:1> = 0x0  
+		 	e1 <c_ubyte:2> = 0x0  
+		}
+	]  
+ 	f <c_ulong_Array_2> = [0x0, 0x0]  
+ 	c <union.anon> = union.anon{
+	 	cv <c_ubyte> = 0x2  
+	 	 <union.anon> = union.anon{
+		 	cs <struct> = struct{
+			 	c0 <c_ubyte:4> = 0x2 <Two>  
+			 	c1 <c_ubyte:4> = 0x0  
+			}  
+		 	cs1 <struct> = struct{
+			 	c0 <c_ubyte:4> = 0x2  
+			 	c1 <c_ubyte:4> = 0x0  
+			}  
+		}  
+	}  
+}
+---------------test2--------------------
+struct{
+ 	a <c_ushort> = 0x1  
+ 	 <c_ushort> = 0x0  
+ 	d <struct.anon> = struct.anon{
+	 	d0 <c_ubyte:1> = 0x0  
+	 	d1 <c_ubyte:2> = 0x3  
+	}  
+ 	e <struct_Array_2> = [
+		0=> struct{
+		 	e0 <c_ubyte:1> = 0x1  
+		 	e1 <c_ubyte:2> = 0x2  
+		}
+		1=> struct{
+		 	e0 <c_ubyte:1> = 0x0  
+		 	e1 <c_ubyte:2> = 0x3  
+		}
+	]  
+ 	f <c_ulong_Array_2> = [0x7b, 0x1c8]  
+ 	c <union.anon> = union.anon{
+	 	cv <c_ubyte> = 0x2  
+	 	 <union.anon> = union.anon{
+		 	cs <struct> = struct{
+			 	c0 <c_ubyte:4> = 0x2 <Two>  
+			 	c1 <c_ubyte:4> = 0x0  
+			}  
+		 	cs1 <struct> = struct{
+			 	c0 <c_ubyte:4> = 0x2  
+			 	c1 <c_ubyte:4> = 0x0  
+			}  
+		}  
+	}  
+}
+---------------test3--------------------
+{'a': 1,
+ 'c': {'cv':2, 'cs':{'c0':2, 'c1':0}, 'cs1':{'c0':2, 'c1':0}},
+ 'd': {'d0':0, 'd1':3},
+ 'e': [{'e0':1, 'e1':2}, {'e0':0, 'e1':3}],
+ 'f': [123, 456]}
+-----------------------------------
+WARNING: when load_dict to ctypes object, <cobj@2760473570832>.invalid_field not exist and setting this field to 43981(0xabcd) is ignored.
+File "D:/gitrepo/ctypes_ext/_impl.py", line 376, in <module>
+    s2.load_dict(d1, invalid_field=0xabcd)
+struct{
+ 	a <c_ushort> = 0x1  
+ 	 <c_ushort> = 0x0  
+ 	d <struct.anon> = struct.anon{
+	 	d0 <c_ubyte:1> = 0x0  
+	 	d1 <c_ubyte:2> = 0x3  
+	}  
+ 	e <struct_Array_2> = [
+		0=> struct{
+		 	e0 <c_ubyte:1> = 0x1  
+		 	e1 <c_ubyte:2> = 0x2  
+		}
+		1=> struct{
+		 	e0 <c_ubyte:1> = 0x0  
+		 	e1 <c_ubyte:2> = 0x3  
+		}
+	]  
+ 	f <c_ulong_Array_2> = [0x7b, 0x1c8]  
+ 	c <union.anon> = union.anon{
+	 	cv <c_ubyte> = 0x2  
+	 	 <union.anon> = union.anon{
+		 	cs <struct> = struct{
+			 	c0 <c_ubyte:4> = 0x2 <Two>  
+			 	c1 <c_ubyte:4> = 0x0  
+			}  
+		 	cs1 <struct> = struct{
+			 	c0 <c_ubyte:4> = 0x2  
+			 	c1 <c_ubyte:4> = 0x0  
+			}  
+		}  
+	}  
+}
+-----------------------------------
+WARNING: when load_dict to ctypes object, <cobj@2760473570452>.invalid_field not exist and setting this field to 74565(0x12345) is ignored.
+File "D:/gitrepo/ctypes_ext/_impl.py", line 381, in <module>
+    s3=S.load_dict(d1)
+struct{
+ 	a <c_ushort> = 0x1  
+ 	 <c_ushort> = 0x0  
+ 	d <struct.anon> = struct.anon{
+	 	d0 <c_ubyte:1> = 0x0  
+	 	d1 <c_ubyte:2> = 0x3  
+	}  
+ 	e <struct_Array_2> = [
+		0=> struct{
+		 	e0 <c_ubyte:1> = 0x1  
+		 	e1 <c_ubyte:2> = 0x2  
+		}
+		1=> struct{
+		 	e0 <c_ubyte:1> = 0x0  
+		 	e1 <c_ubyte:2> = 0x3  
+		}
+	]  
+ 	f <c_ulong_Array_2> = [0x7b, 0x1c8]  
+ 	c <union.anon> = union.anon{
+	 	cv <c_ubyte> = 0x2  
+	 	 <union.anon> = union.anon{
+		 	cs <struct> = struct{
+			 	c0 <c_ubyte:4> = 0x2 <Two>  
+			 	c1 <c_ubyte:4> = 0x0  
+			}  
+		 	cs1 <struct> = struct{
+			 	c0 <c_ubyte:4> = 0x2  
+			 	c1 <c_ubyte:4> = 0x0  
+			}  
+		}  
+	}  
+}
+______________________________________
+{
+	'a': 0x1,
+	'd': {
+		'd0': 0x0,
+		'd1': 0x3,
+	},
+	'e': [
+		{
+			'e0': 0x1,
+			'e1': 0x2,
+		},
+		{
+			'e0': 0x0,
+			'e1': 0x3,
+		}
+	],
+	'f': [0x7b, 0x1c8],
+	'c': {
+		'cv': 0x2,
+		'cs': {
+			'c0': 0x2,
+			'c1': 0x0,
+		},
+		'cs1': {
+			'c0': 0x2,
+			'c1': 0x0,
+		},
+	},
+}
+-----------------------------------
+```
+
