@@ -1,7 +1,9 @@
 # ctypes_ext
-extension to ctypes
-provide an easy way to define complex binary structures. 
-provide a wrapper to make an object immutable.
+An extension to ctypes.
+
+# Features
+* provide an easy way to define complex binary structures. 
+* provide a wrapper to make an object immutable.
 
 ## Demo 
 ```python
